@@ -6,7 +6,7 @@
 `default_nettype none
 
 module tt_um_LFSR_Encrypt (
-    input  wire [7:0] ui_in,    // Seed value
+    input  wire [7:0] ui_in,    // Data in
     output wire [7:0] uo_out,   // LFSR output
     input  wire [7:0] uio_in,   // IOs: Input path
     output wire [7:0] uio_out,  // IOs: Output path
@@ -19,7 +19,7 @@ module tt_um_LFSR_Encrypt (
   reg [7:0] lfsr_d, lfsr_q;
 
   always @(*) begin
-    lfsr_d <= {lfsr_q[6:0], (lfsr_q[0] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7])};
+    lfsr_d = {lfsr_q[6:0], (lfsr_q[0] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7])};
   end
 
   always @(posedge clk or negedge rst_n) begin
@@ -31,5 +31,10 @@ module tt_um_LFSR_Encrypt (
   end
 
 assign uo_out = lfsr_q ^ ui_in;
+
+assign uio_out = 0;
+assign uio_oe  = 0;
+
+wire _unused = &{ena, uio_in};
 
 endmodule
