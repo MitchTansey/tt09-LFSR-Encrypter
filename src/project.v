@@ -30,7 +30,7 @@ module tt_um_LFSR_Encrypt (
     end
   end
 
-assign uo_out = 8'b01000001 ^ ui_in;
+assign uo_out = lfsr_q ^ ui_in;
 
 assign uio_out = 0;
 assign uio_oe  = 0;
