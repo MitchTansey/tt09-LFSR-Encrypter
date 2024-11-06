@@ -16,7 +16,7 @@ module tt_um_LFSR_Encrypt (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  reg [0:7] lfsr_d, lfsr_q;
+  reg [7:0] lfsr_d, lfsr_q;
 
   always @(*) begin
     lfsr_d <= {lfsr_q[6:0], (lfsr_q[0] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7])};
