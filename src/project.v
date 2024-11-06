@@ -31,8 +31,8 @@ module tt_um_LFSR_Encrypt (
   end
 
 assign uo_out = lfsr_q ^ ui_in;
+assign uio_out = lfsr_q;
 
-assign uio_out = 0;
 assign uio_oe  = 0;
 
 wire _unused = &{uio_oe, uio_in};

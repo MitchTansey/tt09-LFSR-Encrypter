@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        "not sure yet"      # Project title
+  title:        "LFSR Encrypter"      # Project title
   author:       "Mitchell Tansey"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Simple LFSR data encrypter. Takes data in and xor's it with an lfsr output to hide data."      # One line description of what your project does
+  description:  "Simple LFSR data encrypter. Takes data in and xor's it with an lfsr output to encrypt data."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -42,14 +42,14 @@ pinout:
   uo[7]: "ui_out[7]"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "uio_out[0]"
+  uio[1]: "uio_out[1]"
+  uio[2]: "uio_out[2]"
+  uio[3]: "uio_out[3]"
+  uio[4]: "uio_out[4]"
+  uio[5]: "uio_out[5]"
+  uio[6]: "uio_out[6]"
+  uio[7]: "uio_out[7]"
 
 # Do not change!
 yaml_version: 6
