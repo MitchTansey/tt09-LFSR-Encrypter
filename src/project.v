@@ -25,7 +25,7 @@ module tt_um_LFSR_Encrypt (
   always @(posedge clk or negedge rst_n) begin
     if(!rst_n) begin
       lfsr_q <= 8'b01000001;
-    end else if(uio_oe) begin
+    end else if(ena) begin
       lfsr_q <= lfsr_d;
     end
   end
@@ -35,6 +35,6 @@ assign uo_out = lfsr_q ^ ui_in;
 assign uio_out = 0;
 assign uio_oe  = 0;
 
-wire _unused = &{ena, uio_in};
+wire _unused = &{uio_oe, uio_in};
 
 endmodule
