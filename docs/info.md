@@ -13,7 +13,7 @@ Takes in data in, and xor's it with a random number generated from a LFSR.
 
 ## How to test
 
-Explain how to use your project (TODO)
+TODO
 
 ## External hardware
 
